@@ -1,135 +1,61 @@
 ---
 title-slide: false
-bibliography: references.bib
-csl: vancouver.csl
-citeproc: true
 theme: serif
 background-color: "#ffffff"
 transition: slide
 navigationMode: linear
 hash: true
+
+# Math Score Analysis
+
 ---
 
 :::: {.columns}
 ::: {.column width="50%"}
-
-## Sample slides
-#### PlaceHolderName
-#### Universiti Malaysia Perlis
-#### [placeholder@email.com](mailto:placeholder@email.com)
-
-<audio id="bg-music" src="media/audio/sb.m4a" loop></audio>
-
-<div id="audio-credit"
-     style="position: absolute; bottom: 40px; right: 20px; font-size: 0.6em; opacity: 0.6;">
-  Music: “Adrift” by Scott Buckley (CC BY 4.0)
-</div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const audio = document.getElementById('bg-music');
-    const credit = document.getElementById('audio-credit');
-
-    // hide credit by default
-    credit.style.display = 'none';
-
-    const test = new Audio('media/audio/bgm.mp3');
-
-    test.addEventListener('canplaythrough', () => {
-      // bgm.mp3 exists → use it, keep credit hidden
-      audio.src = 'media/audio/bgm.mp3';
-    }, { once: true });
-
-    test.addEventListener('error', () => {
-      // bgm.mp3 missing → sb.m4a will play → show credit
-      credit.style.display = 'block';
-    }, { once: true });
-
-    document.addEventListener('click', () => {
-      if (Reveal.getIndices().h === 0) {
-        audio.volume = 0.5;
-        audio.play();
-      }
-    }, { once: true });
-
-    Reveal.on('slidechanged', (event) => {
-      if (event.indexh > 0) { audio.pause(); }
-      else { audio.play(); }
-    });
-  });
-</script>
-
+### Math Score Distribution
+Histogram showing the frequency of math scores across the dataset.
 :::
 
 ::: {.column width="50%"}
-![](media/pics/logo1.png)
+<iframe data-src="media/plots/math_histogram.html" width="100%" height="500px" style="border:none;"></iframe>
 :::
-
 ::::
 
 ---
 
 :::: {.columns}
 ::: {.column width="50%"}
-### Slide one
-**Key Concepts:**
-- Energy conservation per @carnot1824.
-- $\Delta U = Q - W$
+### Average Math Score by Sex
+Barchart comparing the mean performance between male and female students.
 :::
 
 ::: {.column width="50%"}
-![](media/pics/sample.png)
+<iframe data-src="media/plots/math_sex_barchart.html" width="100%" height="500px" style="border:none;"></iframe>
 :::
-::::
-
----
-
-<span class="slide-title" data-title="My Hidden Slide Name"></span>
-
-![](media/pics/wide.jpeg)
-
----
-
-:::: {.columns}
-::: {.column width="50%"}
-### The Master Equation
-The fundamental relation of thermodynamics:
-
-$$\Delta U = Q - W$$
-
-The work done $W$ is positive when the system expands against an external pressure.
-:::
-
-::: {.column width="50%"}
-<video data-src="media/videos/sample.mp4" data-autoplay loop muted width="100%"></video>
-:::
-
 ::::
 
 ---
 
 :::: {.columns}
 ::: {.column width="50%"}
-### Visualizing the Gas Law
-**Interactive Model:**
-
-- P, V, and T relationships.
-- Use the slider to adjust pressure.
-- Observe the phase boundary.
+### Math Score Variability
+Box plot illustrating the quartiles and potential outliers of math scores.
 :::
 
 ::: {.column width="50%"}
-<iframe 
-  data-src="media/plots/sample.html" 
-  width="100%" 
-  height="500px" 
-  style="border:none;" 
-  scrolling="no">
-</iframe>
+<iframe data-src="media/plots/math_boxplot.html" width="100%" height="500px" style="border:none;"></iframe>
 :::
 ::::
 
 ---
 
-# Bibliography
-<div id="refs"></div>
+:::: {.columns}
+::: {.column width="50%"}
+### Math vs. Verbal Correlation
+Scatter diagram exploring the relationship between Math and Verbal scores.
+:::
+
+::: {.column width="50%"}
+<iframe data-src="media/plots/math_verbal_scatter.html" width="100%" height="500px" style="border:none;"></iframe>
+:::
+::::
